@@ -12,6 +12,9 @@ public class Entity : MonoBehaviour {
     public float getCharge() {
         return charge;
     }
+    public void setCharge(float newCharge) {
+        charge = newCharge;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -24,4 +27,22 @@ public class Entity : MonoBehaviour {
 	void Update () {
         field.GetComponent<Field>().setCharge(charge);
 	}
+    void OnCollisionStay(Collision collision) {
+        
+        if (collision.gameObject.GetComponent<Entity>())
+        {
+            Entity otherEntity = collision.gameObject.GetComponent<Entity>();
+            float otherCharge = otherEntity.getCharge();
+            if (otherCharge > charge)
+            {
+                otherEntity.setCharge(otherCharge - 1);
+                charge++;
+            }
+            else if (otherCharge < charge)
+            {
+                otherEntity.setCharge(otherCharge + 1);
+                charge--;
+            }
+        }
+    }
 }
