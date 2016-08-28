@@ -11,13 +11,16 @@ public class StageInfo
         public float x;
         public float y;
         public float z;
+        public float charge;
         public void serialize(GameObject gameObject) {
             x = gameObject.transform.position.x;
             y = gameObject.transform.position.y;
             z = gameObject.transform.position.z;
+            charge = gameObject.GetComponent<Entity>().charge;
         }
         public void deserialize(GameObject gameObject) {
             gameObject.transform.position = new Vector3(x, y, z);
+            gameObject.GetComponent<Entity>().charge = charge;
 
         }
     };

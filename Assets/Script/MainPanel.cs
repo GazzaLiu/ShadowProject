@@ -5,11 +5,9 @@ using System.Collections;
 public class MainPanel : MonoBehaviour
 {
     public StageEditor stageEditor;
-
     public GameObject selectPanel;
     public GameObject stagePanel;
     public GameObject entityPanel;
-
     public GameObject mainButton;
     public GameObject button;
 

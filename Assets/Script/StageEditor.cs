@@ -95,7 +95,6 @@ public class StageEditor : MonoBehaviour {
         //create loaded stage
         stageId = stageInfo.stageId;
         stageInLevel = (GameObject)Instantiate(stagePrefabs[stageInfo.stageId], transform);
-            
         for (int i = 0; i < stageInfo.entityInfo.Length; i++) {
             int id = stageInfo.entityInfo[i].id;
             entityId.Add(id);

@@ -61,6 +61,7 @@ public class EditPanel : MonoBehaviour {
         GameObject selected = stageEditor.selected;
         if (selected)
         {
+
             Destroy(selected);
         }
     }
